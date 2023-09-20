@@ -19,29 +19,88 @@ const equal = document.getElementById("answer");
 
 let math;
 
-function testing(arrOne,arrTwo){
-return arrOne + arrTwo;
-}
+let boolean = false;
+
+let numberOne;
+
+let sign;
+
+let numOne;
+
+let numTwo;
+
+
+document.addEventListener("click",(event)=>{
+    let target = event.target
+    let see = target.getAttribute("id");
+    if(see === "add"){
+        sign = '+'
+        arrOne = []
+    }else if(see === 'minus'){
+        sign = '-'
+    }else if(see === 'multiply'){
+        sign = "x"
+    }else if(see === 'divide'){
+        sign = "/"
+    }
+})
+
 
 one.addEventListener("click",()=>{
     arrOne.push(1);
-    textType.textContent = arrOne;
-    console.log(arrOne)
+    textType.textContent = arrOne.join('');
+    // console.log(arrOne)
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
 })
 
-two.addEventListener("click",()=>{
+
+two.addEventListener("click",(event)=>{
+    let target = event.target;
+    console.log(target)
     arrOne.push(2);
     textType.textContent = arrOne.join('');
     let newNumb = arrOne.join('');
     console.log(newNumb);
+    math = newNumb
+})
+
+addition.addEventListener('click',()=>{
+    textType.textContent = '';
+    textType.textContent = '+';
+    numberOne = Number(math)
+    console.log( typeof numberOne);
+localStorage.setItem("numberOne",numberOne);
+  numOne = localStorage.getItem("numberOne");
+// console.log(numOne)
+
+
+})
+
+// ADDITION IS WORKING ONLY FOR NUMBERS TWO AND ONE FINISH IT LATER MY FRIEND KEEP IT UP PIECE OUT;
+
+equal.addEventListener("click",()=>{
+    console.log(sign)
+    console.log(numberOne)
+    console.log(numOne);
+    // console.log(typeof numOne);
+    console.log(typeof math)
+    numTwo = Number(math);
+    console.log(numTwo)
+    console.log(typeof numberOne)
+    console.log(numberOne)
+    if(sign === '+'){
+        let result = numberOne + numTwo;
+        textType.textContent = result;
+        console.log(result)
+    }
+
+
 })
 
 
-
-const arrOne = [];
-const arrTwo = [];
+let arrOne = [];
+let arrTwo = [];
 console.log(arrOne)
 
-const test = (type)=>{
-
-}
