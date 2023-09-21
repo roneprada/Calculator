@@ -14,8 +14,9 @@ const divide = document.getElementById("divide");
 const multiply = document.getElementById('multiply');
 const substract = document.getElementById("minus");
 const addition = document.getElementById('add');
-const clear = document.getElementById("ce");
+const clear = document.getElementById("clear");
 const equal = document.getElementById("answer");
+
 
 let math;
 
@@ -30,6 +31,10 @@ let numOne;
 let numTwo;
 
 
+
+
+//USED EVENT LISTENER TO GET EVERY NUMBER ID TO ASSIGN CONTENT IN THE DECLARED VARIABLE CALLED SIGN
+
 document.addEventListener("click",(event)=>{
     let target = event.target
     let see = target.getAttribute("id");
@@ -39,32 +44,134 @@ document.addEventListener("click",(event)=>{
     }else if(see === 'minus'){
         sign = '-'
     }else if(see === 'multiply'){
-        sign = "x"
+        sign = "*"
     }else if(see === 'divide'){
         sign = "/"
     }
 })
 
 
+
+
+//NUMBER 1
+
 one.addEventListener("click",()=>{
     arrOne.push(1);
     textType.textContent = arrOne.join('');
-    // console.log(arrOne)
     let newNumb = arrOne.join('');
     console.log(newNumb);
     math = newNumb
 })
 
 
-two.addEventListener("click",(event)=>{
-    let target = event.target;
-    console.log(target)
+
+
+//NUMBER 2
+
+two.addEventListener("click",()=>{
     arrOne.push(2);
     textType.textContent = arrOne.join('');
     let newNumb = arrOne.join('');
     console.log(newNumb);
     math = newNumb
 })
+
+
+
+//NUMBER 3
+
+three.addEventListener("click",()=>{
+    arrOne.push(3);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+
+//NUMBER 4
+
+four.addEventListener("click",()=>{
+    arrOne.push(4);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    // console.log(newNumb);
+    math = newNumb
+})
+
+
+
+//NUMBER 5
+
+five.addEventListener("click",()=>{
+    arrOne.push(5);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+
+//NUMBER 6
+
+six.addEventListener("click",()=>{
+    arrOne.push(6);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+
+//NUMBER 7
+
+seven.addEventListener("click",()=>{
+    arrOne.push(7);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+//NUMBER 8
+
+eight.addEventListener("click",()=>{
+    arrOne.push(8);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+//NUMER 9
+
+nine.addEventListener("click",()=>{
+    arrOne.push(9);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+//NUMBER 0
+
+zero.addEventListener("click",()=>{
+    arrOne.push(0);
+    textType.textContent = arrOne.join('');
+    let newNumb = arrOne.join('');
+    console.log(newNumb);
+    math = newNumb
+})
+
+
+
+//FOR ADDITION SIGN;
 
 addition.addEventListener('click',()=>{
     textType.textContent = '';
@@ -73,27 +180,86 @@ addition.addEventListener('click',()=>{
     console.log( typeof numberOne);
 localStorage.setItem("numberOne",numberOne);
   numOne = localStorage.getItem("numberOne");
-// console.log(numOne)
-
-
 })
 
-// ADDITION IS WORKING ONLY FOR NUMBERS TWO AND ONE FINISH IT LATER MY FRIEND KEEP IT UP PIECE OUT;
+
+
+//FOR SUBSTRACTION SIGN;
+
+substract.addEventListener('click',()=>{
+    textType.textContent = '';
+    textType.textContent = '-';
+    numberOne = Number(math)
+    console.log( typeof numberOne);
+localStorage.setItem("numberOne",numberOne);
+  numOne = localStorage.getItem("numberOne");
+  arrOne = [];
+  console.log(arrOne)
+  console.log(numOne)
+  arrTwo.push()
+  console.log(arrTwo)
+})
+
+
+//FOR MULTIPLICATION SIGN;
+
+multiply.addEventListener('click',()=>{
+    textType.textContent = '';
+    textType.textContent = '*';
+    numberOne = Number(math)
+    console.log( typeof numberOne);
+localStorage.setItem("numberOne",numberOne);
+  numOne = localStorage.getItem("numberOne");
+  arrOne = [];
+  console.log(arrOne)
+  console.log(numOne)
+  arrTwo.push()
+  console.log(arrTwo)
+})
+
+
+//FOR DIVISION SIGN;
+
+divide.addEventListener('click',()=>{
+    textType.textContent = '';
+    textType.textContent = '/';
+    numberOne = Number(math)
+    console.log( typeof numberOne);
+localStorage.setItem("numberOne",numberOne);
+  numOne = localStorage.getItem("numberOne");
+  arrOne = [];
+  console.log(arrOne)
+  console.log(numOne)
+  arrTwo.push()
+  console.log(arrTwo)
+})
+
+
+
+
+
+// GET RESULT FOR PROBLEM
 
 equal.addEventListener("click",()=>{
-    console.log(sign)
-    console.log(numberOne)
-    console.log(numOne);
-    // console.log(typeof numOne);
-    console.log(typeof math)
+
     numTwo = Number(math);
-    console.log(numTwo)
-    console.log(typeof numberOne)
-    console.log(numberOne)
+
     if(sign === '+'){
         let result = numberOne + numTwo;
         textType.textContent = result;
         console.log(result)
+    }else if(sign === "-"){
+        let result = numberOne - numTwo;
+        textType.textContent = result;
+    }else if(sign === "*"){
+        let result = numberOne * numTwo;    
+        textType.textContent = result;
+    }else if(sign ===  '/'){
+        let result = numberOne / numTwo;    
+        textType.textContent = result;
+    }else if((sign === '/') && (numOne < numTwo)){
+        let result = numberOne / numTwo;    
+        textType.textContent = result.toFixed(2);
     }
 
 
@@ -102,5 +268,13 @@ equal.addEventListener("click",()=>{
 
 let arrOne = [];
 let arrTwo = [];
+
+const empty = ()=>{
+    arrOne = [];
+    arrTwo = [];
+    textType.textContent = 0;
+}
+clear.addEventListener('click',empty)
+
 console.log(arrOne)
 
